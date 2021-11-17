@@ -12,17 +12,12 @@ export default class Team {
   }
 
   addAll(...characters) {
-    /* eslint-disable-next-line */
-    for (const item of characters) {
+    characters.forEach((item) => {
       this.members.add(item);
-    }
+    });
   }
 
   toArray() {
-    const array = [];
-    this.members.forEach((item) => {
-      array.push(item);
-    });
-    return array;
+    return Array.from(this.members.values());
   }
 }
